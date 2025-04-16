@@ -1,8 +1,8 @@
 package br.com.fiap.apisecurity.model;
 
 public enum UserRole {
-    ADMIN("ADMIN"),
-    USER("USER");
+    ADMIN("admin"),
+    USER("user");
 
     private final String role;
 
