@@ -19,10 +19,38 @@ public class User implements UserDetails {
     private String password;
     private UserRole role;
 
+    public User() {
+        // Default constructor needed for JPA
+    }
+
     public User(String username, String password, UserRole role) {
         this.username = username;
         this.password = password;
         this.role = role;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -63,5 +91,14 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", role=" + role +
+                '}';
     }
 }
